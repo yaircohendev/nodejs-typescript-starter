@@ -1,6 +1,6 @@
 import Joi from 'joi';
 import { NextFunction, Response } from 'express';
-import { HttpStatusCode } from '../shared/types/http.model';
+import { HttpStatusCode } from '../../shared/types/http.model';
 
 export const validateInput = (request: { body: any }, res: Response, next: NextFunction) => {
     const body = request.body;

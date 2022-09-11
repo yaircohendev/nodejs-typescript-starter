@@ -2,14 +2,14 @@ import express, { NextFunction, Request, Response } from 'express';
 import { logger } from './shared/classes/logger';
 import { ErrorHandler } from './shared/classes/error-handler';
 import { BaseError } from './shared/classes/base-error';
-import starterRoute from './api/starter.routes';
+import ordersRoutes from './api/orders/orders.routes';
 
 const app = express();
 app.use(express.json());
 const port = process.env.PORT || 8080;
 const errorHandler = new ErrorHandler(logger);
 
-app.use('/starter', starterRoute);
+app.use('/orders', ordersRoutes);
 
 app.use(errorMiddleware);
 
